@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dsaproject;
+
+
 
 /**
  *
- * @author Dell
+ * @author Imeyshan
  */
-
 public class ListHouse implements IListTable{
 
     private int LotNumber = 0;
@@ -107,7 +107,7 @@ public class ListHouse implements IListTable{
     @Override
     public ListHouse Copy() {
             
-       ListHouse list=new ListHouse();
+       ListHouse list=this;
        return list;
         
         
