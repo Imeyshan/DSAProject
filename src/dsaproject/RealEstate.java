@@ -46,6 +46,7 @@ public class RealEstate extends javax.swing.JFrame {
         txtLastName = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
         txtSqrt = new javax.swing.JTextField();
+        lblMsg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,6 +104,7 @@ public class RealEstate extends javax.swing.JFrame {
         getContentPane().add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 160, -1));
         getContentPane().add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 160, -1));
         getContentPane().add(txtSqrt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 160, -1));
+        getContentPane().add(lblMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 90, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,6 +156,7 @@ public class RealEstate extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel lblMsg;
     private javax.swing.JButton txtDelete;
     private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtLastName;
