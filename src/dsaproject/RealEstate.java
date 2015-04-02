@@ -17,6 +17,7 @@ public class RealEstate extends javax.swing.JFrame {
      */
      HouseFile housefile=new HouseFile();
      SortedList sortedList=SortedList.getInstantOf();
+     int printerindex;
     public RealEstate() {
         initComponents();
         setLocationRelativeTo(null);
@@ -199,7 +200,8 @@ public class RealEstate extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+       displayNext(printerindex);
+        ++printerindex;
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
@@ -298,9 +300,7 @@ public class RealEstate extends javax.swing.JFrame {
                 txtNoOfRoom.setText(""+NoOFBedRooms);
                 txtPrice.setText(""+Price);
                 txtSqrt.setText(""+SquareFeet);
-    
-    
-    
+  
         
         
     }
