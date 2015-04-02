@@ -19,6 +19,7 @@ public class RealEstate extends javax.swing.JFrame {
      SortedList sortedList=SortedList.getInstantOf();
     public RealEstate() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -55,11 +56,16 @@ public class RealEstate extends javax.swing.JFrame {
 
         btnFind.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnFind.setText("Find");
-        getContentPane().add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 70, -1));
+        btnFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 70, -1));
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton2.setText("Reset");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 70, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 70, -1));
 
         btnAddrecord.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnAddrecord.setText("Add");
@@ -68,19 +74,34 @@ public class RealEstate extends javax.swing.JFrame {
                 btnAddrecordActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAddrecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 70, -1));
+        getContentPane().add(btnAddrecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 70, -1));
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton4.setText("Clear");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 70, -1));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 70, -1));
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton5.setText("Next");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 70, -1));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 70, -1));
 
         txtDelete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         txtDelete.setText("Delete");
-        getContentPane().add(txtDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 70, -1));
+        txtDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDeleteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 70, -1));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setText("Price");
@@ -111,15 +132,14 @@ public class RealEstate extends javax.swing.JFrame {
         getContentPane().add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 160, -1));
         getContentPane().add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 160, -1));
         getContentPane().add(txtSqrt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 160, -1));
-        getContentPane().add(lblMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 90, 20));
+        getContentPane().add(lblMsg, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 130, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddrecordActionPerformed
         try {
-            
-            
+                        
             
            int lotnumber=Integer.parseInt(txtLotNumber.getText().trim());
            sortedList.find(lotnumber);
@@ -165,6 +185,22 @@ public class RealEstate extends javax.swing.JFrame {
          e.printStackTrace();
         }
     }//GEN-LAST:event_btnAddrecordActionPerformed
+
+    private void txtDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeleteActionPerformed
+
+    }//GEN-LAST:event_txtDeleteActionPerformed
+
+    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFindActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,4 +258,57 @@ public class RealEstate extends javax.swing.JFrame {
     private javax.swing.JTextField txtPrice;
     private javax.swing.JTextField txtSqrt;
     // End of variables declaration//GEN-END:variables
+
+    void displayNext(int index){
+        
+          ListHouse[] listHouse = sortedList.bubbleSort();
+        if (listHouse.length<=index) {
+           
+             return;
+        }
+        
+          int LotNumber=0;
+          String FirstName=null;
+          String LastName=null;
+          int NoOFBedRooms=0;
+          double Price=0;
+          int SquareFeet=0;
+        
+        
+          for (int i = 0; i <= index ; i++) {
+            
+        
+                if (listHouse!=null) {
+                    
+                LotNumber=listHouse[i].getLotNumber();
+                FirstName=listHouse[i].getFirstName();
+                LastName=listHouse[i].getLastName();
+                NoOFBedRooms=listHouse[i].getNoOFBedRooms();
+                Price=listHouse[i].getPrice();
+                SquareFeet=listHouse[i].getSquareFeet();
+                }
+              
+                
+                
+           }
+    
+                txtLotNumber.setText(""+LotNumber);
+                txtFirstName.setText(FirstName);
+                txtLastName.setText(LastName);
+                txtNoOfRoom.setText(""+NoOFBedRooms);
+                txtPrice.setText(""+Price);
+                txtSqrt.setText(""+SquareFeet);
+    
+    
+    
+        
+        
+    }
+
+
+
+
+
+
+
 }
