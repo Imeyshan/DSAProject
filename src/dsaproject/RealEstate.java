@@ -53,6 +53,11 @@ public class RealEstate extends javax.swing.JFrame {
         lblMsg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnFind.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -144,6 +149,33 @@ public class RealEstate extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddrecordActionPerformed
+
+ ListHouse list=new ListHouse();
+ list.setLotNumber(Integer.parseInt(txtLotNumber.getText().trim()));
+   
+        if (sortedList.isAvalbible(list)) {
+            lblMsg.setText("Record All Ready Available");
+            return;
+        }
+ 
+  
+  
+ list.setFirstName(txtFirstName.getText().trim());
+ list.setLastName(txtLastName.getText().trim());
+ list.setPrice(Double.parseDouble(txtPrice.getText().trim()));
+ list.setNoOFBedRooms(Integer.parseInt(txtNoOfRoom.getText().trim()));
+ list.setSquareFeet(Integer.parseInt(txtSqrt.getText().trim()));
+ sortedList.insert(list);
+        
+         lblMsg.setText("Record Added");
+               
+    }//GEN-LAST:event_btnAddrecordActionPerformed
+
+    private void txtDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeleteActionPerformed
+
+    }//GEN-LAST:event_txtDeleteActionPerformed
+
+    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
         try {
                         
             
@@ -190,14 +222,6 @@ public class RealEstate extends javax.swing.JFrame {
         } catch (Exception e) {
          e.printStackTrace();
         }
-    }//GEN-LAST:event_btnAddrecordActionPerformed
-
-    private void txtDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeleteActionPerformed
-
-    }//GEN-LAST:event_txtDeleteActionPerformed
-
-    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -213,6 +237,10 @@ public class RealEstate extends javax.swing.JFrame {
        displayNext(0);
        this.printerindex=0;
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+   
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
