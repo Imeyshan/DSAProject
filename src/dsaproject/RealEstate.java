@@ -66,6 +66,11 @@ public class RealEstate extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jButton2.setText("Reset");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 70, -1));
 
         btnAddrecord.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -204,6 +209,11 @@ public class RealEstate extends javax.swing.JFrame {
         ++printerindex;
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       displayNext(0);
+       this.printerindex=0;
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,6 +271,8 @@ public class RealEstate extends javax.swing.JFrame {
     private javax.swing.JTextField txtSqrt;
     // End of variables declaration//GEN-END:variables
 
+    
+    //Display Next Sorted  Record
     void displayNext(int index){
         
           ListHouse[] listHouse = sortedList.bubbleSort();
