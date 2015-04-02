@@ -239,7 +239,7 @@ public class RealEstate extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-   
+    housefile.Work_With_JSONWrite(sortedList.theArray);
     }//GEN-LAST:event_formWindowClosing
 
     /**
