@@ -34,7 +34,8 @@ public class HouseFile {
                 
            WriteFile(JSONString);
        } catch (IOException ex) {
-            System.out.println(ex);
+           System.out.println(ex);
+          
        }
    }
    
@@ -47,9 +48,11 @@ public class HouseFile {
            ListHouse  []jsonToJava = (  ListHouse[]) JsonReader.jsonToJava(ReadFile());
         
          return jsonToJava;
-         
+       }catch(NullPointerException ex){
+          // System.out.println();
        } catch (IOException ex) {
            System.out.println(ex);
+          
        }
        return null;
    }
@@ -60,17 +63,18 @@ public class HouseFile {
       try {
          
              FileWriter fileWriter;
-              fileWriter = new FileWriter("record.txt");
+              fileWriter = new FileWriter("List.txt");
           try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
               
               
               
               
-             bufferedWriter .append(writeString);
+             bufferedWriter .write(writeString);
               bufferedWriter.close();
           }
        } catch (IOException ex) {
-            System.out.println(ex);
+           System.out.println(ex);
+          
        
        }
        
@@ -81,29 +85,27 @@ public class HouseFile {
   {
       FileReader fileReader =   null;
        try {
-           fileReader = new FileReader("record.txt");
+           fileReader = new FileReader("List.txt");
            // Always wrap FileReader in BufferedReader.
            BufferedReader bufferedReader =   new BufferedReader(fileReader);
           try {
               String readLine = bufferedReader.readLine().trim();
-              
-                    
+                               
               
               return readLine;
+            
               
           } catch (IOException ex) {
               System.out.println(ex);
+             
           }
            
-        
+       }catch(NullPointerException ex){
        } catch (FileNotFoundException ex) {
            System.out.println(ex);
+         
        } finally {
-           try {
-               fileReader.close();
-           } catch (IOException ex) {
-               System.out.println(ex);
-           }
+          
        }
        return null;
 
