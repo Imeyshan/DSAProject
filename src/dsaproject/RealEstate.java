@@ -15,6 +15,8 @@ public class RealEstate extends javax.swing.JFrame {
     /**
      * Creates new form RealEstate
      */
+     HouseFile housefile=new HouseFile();
+     SortedList sortedList=SortedList.getInstantOf();
     public RealEstate() {
         initComponents();
     }
@@ -61,6 +63,11 @@ public class RealEstate extends javax.swing.JFrame {
 
         btnAddrecord.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btnAddrecord.setText("Add");
+        btnAddrecord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddrecordActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnAddrecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 70, -1));
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -108,6 +115,56 @@ public class RealEstate extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddrecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddrecordActionPerformed
+        try {
+            
+            
+            
+           int lotnumber=Integer.parseInt(txtLotNumber.getText().trim());
+           sortedList.find(lotnumber);
+            
+         
+            if (sortedList.theArray==null) {
+                lblMsg.setText("No Record Dispaly");
+                return;
+            }
+             
+                         
+          String FirstName=null;
+          String LastName=null;
+          int NoOFBedRooms=0;
+          double Price=0;
+          int SquareFeet=0;
+            for (ListHouse listHouse : sortedList.theArray) {
+                if (listHouse!=null) {
+                    
+                
+                FirstName=listHouse.getFirstName();
+                LastName=listHouse.getLastName();
+                NoOFBedRooms=listHouse.getNoOFBedRooms();
+                Price=listHouse.getPrice();
+                SquareFeet=listHouse.getSquareFeet();
+                }
+            }
+        
+     
+            
+                txtFirstName.setText(FirstName);
+                txtLastName.setText(LastName);
+                txtNoOfRoom.setText(""+NoOFBedRooms);
+                txtPrice.setText(""+Price);
+                txtSqrt.setText(""+SquareFeet);
+            
+        }catch(NullPointerException ex){
+            ex.printStackTrace();
+            
+        }catch(NumberFormatException ex){
+            lblMsg.setText("Enter No");
+        } catch (Exception e) {
+         e.printStackTrace();
+        }
+    }//GEN-LAST:event_btnAddrecordActionPerformed
 
     /**
      * @param args the command line arguments
