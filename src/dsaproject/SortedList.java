@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package dsaproject;
 
 /**
@@ -28,10 +27,10 @@ public class SortedList {
 
     }
 
-    // initialize array size 5
+    // initialize array size 2
     
     private SortedList() {
-        theArray = new ListHouse[5];
+        theArray = new ListHouse[2];
          HouseFile hf=new HouseFile();
         ListHouse[] ar = hf.Work_With_JSONReader();
        
@@ -73,17 +72,22 @@ public class SortedList {
     
     
     // find the record  accroding in to the lot number 
-    public ListHouse [] find(int lotNumber)
-    {
-        for (ListHouse theArray1 : theArray) {
-            if (theArray1 != null) {
-                if (theArray1.getLotNumber() == lotNumber) {
-                    return theArray;
-                }
+        public  ListHouse  find(int lotNumber)
+        {
+        for (int i = 0; i < theArray.length; i++) {
+            if (theArray[i]!=null) {
+                
+            
+            if (theArray[i].getLotNumber()== lotNumber) {
+                
+                return  theArray[i];
+                
+                
+            }
             }
         }
-        return null;
-    }
+             return null;
+        }
     
         
         
