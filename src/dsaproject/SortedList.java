@@ -16,7 +16,7 @@ public class SortedList {
     ListHouse[] theArray = null;
    
    
-   
+   //Use Desgi  singleton pattern
    
     public static SortedList getInstantOf() {
         if (classObject == null) {
@@ -28,6 +28,8 @@ public class SortedList {
 
     }
 
+    // initialize array size 5
+    
     private SortedList() {
         theArray = new ListHouse[5];
          HouseFile hf=new HouseFile();
@@ -38,7 +40,7 @@ public class SortedList {
        
       }
     
-
+     // Insert to Array and increment Array.
     public void insert(ListHouse list) {
         for (int i = 0; i < theArray.length; i++) {
             if (theArray[i] == null) {
@@ -70,6 +72,7 @@ public class SortedList {
  
     
     
+    // find the record  accroding in to the lot number 
     public ListHouse [] find(int lotNumber)
     {
         for (ListHouse theArray1 : theArray) {
@@ -86,7 +89,7 @@ public class SortedList {
         
         
         
-        
+        //Bubble Sort useing sort and retrieve Record
         public ListHouse[] bubbleSort(){
       
      
@@ -150,7 +153,7 @@ public class SortedList {
         
         
         
-    
+    //Delete Record accroding in to the lot number.
         public void remove(ListHouse ListHouse)
         {
            
@@ -184,7 +187,7 @@ public class SortedList {
         }
         
         
-        
+        //Check the record  is avalbible. 
         public boolean isAvalbible(ListHouse list){
             
             
