@@ -8,8 +8,9 @@ package dsaproject;
 
 /**
  *
- * @author Imeyshan
+ * @author Dell
  */
+
 public class ListHouse implements IListTable{
 
     private int LotNumber = 0;
@@ -138,4 +139,3 @@ public class ListHouse implements IListTable{
  
 
 }
-
