@@ -6,6 +6,8 @@
 
 package dsaproject;
 
+
+
 import com.cedarsoftware.util.io.JsonReader;
 import com.cedarsoftware.util.io.JsonWriter;
 import java.io.BufferedReader;
@@ -15,12 +17,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
 /**
  *
  * @author Imeyshan
  */
 public class HouseFile {
- 
+    
+
     public HouseFile() {
          
     }
@@ -35,7 +39,6 @@ public class HouseFile {
            WriteFile(JSONString);
        } catch (IOException ex) {
            System.out.println(ex);
-          
        }
    }
    
@@ -49,10 +52,8 @@ public class HouseFile {
         
          return jsonToJava;
        }catch(NullPointerException ex){
-          // System.out.println();
        } catch (IOException ex) {
            System.out.println(ex);
-          
        }
        return null;
    }
@@ -63,7 +64,7 @@ public class HouseFile {
       try {
          
              FileWriter fileWriter;
-              fileWriter = new FileWriter("List.txt");
+              fileWriter = new FileWriter("D:\\record.txt");
           try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
               
               
@@ -73,8 +74,7 @@ public class HouseFile {
               bufferedWriter.close();
           }
        } catch (IOException ex) {
-           System.out.println(ex);
-          
+          System.out.println(ex);
        
        }
        
@@ -85,7 +85,7 @@ public class HouseFile {
   {
       FileReader fileReader =   null;
        try {
-           fileReader = new FileReader("List.txt");
+           fileReader = new FileReader("D:\\record.txt");
            // Always wrap FileReader in BufferedReader.
            BufferedReader bufferedReader =   new BufferedReader(fileReader);
           try {
@@ -96,16 +96,18 @@ public class HouseFile {
             
               
           } catch (IOException ex) {
-              System.out.println(ex);
-             
+             // Logger.getLogger(TestSortedList.class.getName()).log(Level.SEVERE, null, ex);
           }
            
        }catch(NullPointerException ex){
        } catch (FileNotFoundException ex) {
            System.out.println(ex);
-         
        } finally {
-          
+           try {
+               fileReader.close();
+           } catch (IOException ex) {
+               System.out.println(ex);
+           }
        }
        return null;
 
