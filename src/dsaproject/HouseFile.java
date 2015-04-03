@@ -64,7 +64,7 @@ public class HouseFile {
       try {
          
              FileWriter fileWriter;
-              fileWriter = new FileWriter("D:\\record.txt");
+              fileWriter = new FileWriter("record.txt");
           try (BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
               
               
@@ -85,7 +85,7 @@ public class HouseFile {
   {
       FileReader fileReader =   null;
        try {
-           fileReader = new FileReader("D:\\record.txt");
+           fileReader = new FileReader("record.txt");
            // Always wrap FileReader in BufferedReader.
            BufferedReader bufferedReader =   new BufferedReader(fileReader);
           try {
