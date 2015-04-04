@@ -115,7 +115,7 @@ public class SortedList {
 				
                                   
                                 
-                            if (templist[j]!=null) {
+                            if (templist[j]!=null && templist[j+1] !=null) {
                                 
                             
 			
