@@ -33,8 +33,10 @@ public class SortedList {
         theArray = new ListHouse[2];
          HouseFile hf=new HouseFile();
         ListHouse[] ar = hf.Work_With_JSONReader();
-       
-             theArray=ar;
+        if (ar!=theArray) {
+            theArray=ar;
+        }
+             
         
        
       }
