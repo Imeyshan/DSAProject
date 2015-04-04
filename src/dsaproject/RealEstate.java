@@ -6,8 +6,6 @@
 
 package dsaproject;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Dell
@@ -233,7 +231,7 @@ public class RealEstate extends javax.swing.JFrame {
             ex.printStackTrace();
             
         }catch(NumberFormatException ex){
-            lblMsg.setText("Enter No");
+            lblMsg.setText("Enter Lot No");
         } catch (Exception e) {
          e.printStackTrace();
         }
@@ -278,7 +276,7 @@ public class RealEstate extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
            Dispaly(0);
-           this.printerindex=0;
+           this.printerindex=1;
            lblMsg.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
