@@ -361,7 +361,7 @@ public class RealEstate extends javax.swing.JFrame {
           for (int i = 0; i <= index ; i++) {
             
         
-                if (listHouse!=null) {
+                if (listHouse[i]!=null) {
                     
                 LotNumber=listHouse[i].getLotNumber();
                 FirstName=listHouse[i].getFirstName();
