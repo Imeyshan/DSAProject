@@ -246,9 +246,13 @@ public class RealEstate extends javax.swing.JFrame {
           
             for (ListHouse object : sortedList.theArray) {
             
+                if (object!=null) {
+                    
+                
                 if (object.getLotNumber()==lotnumber) {
                     sortedList.remove(object);
                     
+                }
                 }
                 
         }
